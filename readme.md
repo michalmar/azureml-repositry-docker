@@ -145,21 +145,12 @@ az ml job create --file ./job/job-pytorch-env.yml
 ```
 ### Throws error:
 ```
-AzureHLCompute job failed.
-
-AggregatedUnauthorizedAccessError: Failed to pull Docker image <AML REGISTRY AZR>.azurecr .io/pytorchr—xxxx This error may Occur because the compute could not
-
-authenticate with the Docker registry to pull the image. If using ACR please ensure the ACR has Admin user enabled or a Managed Identity with 'AcrPu11- access to the ACR is assigned to the Compute. If the ACR Was changed may be to synchronize
-
-the workspace keys. Authentication methods attempted: Anonymous
-
-Note: Request to obtain credential was rejected, if the intention is to authenticate with credentials verify if the AML environment is configured correctly and, if using ACR, that both the compute and the user (or service principal) submitting the run have access to the AML environment and ACR scenarios for more information about expected permissions )
-
-Note: Identity (MSI) not found on the compute, if the intention ig to authenticate with identity ensure that a Managed Identity with S AcrPu11• access to the ACR is assigned to the compute pull Docker image eb6045370c3 -azurecr Vith
-
-authentication mode Anonymous due to: Docker responded with status code 500: { \
-
-\ https : / /eb6045370c3. azurecr. iO/v2 unauthorized: authentication required, visit https://aka.ms/acr/authorization for more information. Compute could not authenticate with the Docker to the
+AzureMLCompute job failed.
+AggregatedUnauthorizedAccessError: Failed to pull Docker image mma57500dd5c1bf4fb9a4f.azurecr.io/my-pytorch_1_9177bed4-0cce-538a-90d0-c42b92f709da. This error may occur because the compute could not authenticate with the Docker registry to pull the image. If using ACR please ensure the ACR has Admin user enabled or a Managed Identity with `AcrPull` access to the ACR is assigned to the compute. If the ACR Admin user's password was changed recently it may be necessary to synchronize the workspace keys.
+	Authentication methods attempted: Anonymous
+	Note: Request to obtain credential was rejected, if the intention is to authenticate with credentials verify if the AML environment is configured correctly and, if using ACR, that both the compute and the user (or service principal) submitting the run have access to the AML environment and ACR (visit https://docs.microsoft.com/en-us/azure/machine-learning/how-to-assign-roles#common-scenarios for more information about expected permissions)
+	Note: Identity (MSI) not found on the compute, if the intention is to authenticate with identity ensure that a Managed Identity with `AcrPull` access to the ACR is assigned to the compute
+	Error: {"Code":"DockerUnauthorizedAccessError","Category":"UserError","Message":"Failed to pull Docker image mma57500dd5c1bf4fb9a4f.azurecr.io/my-pytorch_1_9177bed4-0cce-538a-90d0-c42b92f709da with authentication mode Anonymous due to: Docker responded with status code 500: {\"message\":\"Head \\\"https://mma57500dd5c1bf4fb9a4f.azurecr.io/v2/my-pytorch_1_9177bed4-0cce-538a-90d0-c42b92f709da/manifests/latest\\\": unauthorized: authentication required, visit https://aka.ms/acr/authorization for more information.\"}\n. Compute could not authenticate with the Docker registry to pull the image.","Details":[],"Error":null}
 ```
 
 ### Questions:
