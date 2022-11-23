@@ -46,7 +46,19 @@ az ml environment create --file environment.yml --registry-name mma  --verbose
 
 Environemnt is present in AzureML Registry
 
-#TODO: image of AzureML Registry with the Env 
+```shell
+az ml environment list --registry-name mma
+```
+
+Output:
+```
+[
+  {
+    "latest version": "1",
+    "name": "embeddings-env"
+  }
+]
+```
 
 Step 2: Run job based on the Environment in AzureML Registry
 
@@ -112,12 +124,24 @@ az ml environment create --name my-pytorch --version 1  --image pytorch/pytorch 
 
 Environemnt is present in AzureML Registry
 
-#TODO: image of AzureML Registry with the Env 
+```shell
+az ml environment list --registry-name mma
+```
+
+Output:
+```
+[
+  {
+    "latest version": "1",
+    "name": "my-pytorch"
+  }
+]
+```
 
 Step 2: Run job based on the Environment in AzureML Registry
 
 ```shell
-az ml job create --file ./job/job-custom-env.yml
+az ml job create --file ./job/job-pytorch-env.yml
 ```
 ### Throws error:
 ```
